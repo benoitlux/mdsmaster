@@ -45,9 +45,9 @@ private projet100h.dao.SuggestionDao SuggestionDao = new projet100h.dao.Suggesti
 		SuggestionDao.updateSuggestions(idsuggestion, text, titre, soustitre);
 	}
 	
-	/* public void ajouterSuggestion(Suggestion nouvelSuggestion, Part Image) {
+	 public void ajouterSuggestion(Suggestion nouvelSuggestion, Part Image) {
 		 
-		 Path imagePath = Paths.get(PICTURE_MAIN_DIRECTORY, Image.getSubmittedFileName());
+		 Path imagePath = Paths.get(PICTURE_MAIN_DIRECTORY);
 	        
 
 		 SuggestionDao.ajouterSuggestion(nouvelSuggestion, imagePath.toString());
@@ -57,7 +57,7 @@ private projet100h.dao.SuggestionDao SuggestionDao = new projet100h.dao.Suggesti
 		 }catch (IOException e){
 			 e.printStackTrace();
 		 }
-	    }*/
+	    }
 	 
 	 public Path getPicturePath(Integer IdSuggestion){
 			String picturePathString = SuggestionDao.getPicturePath(IdSuggestion);

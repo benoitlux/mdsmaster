@@ -39,16 +39,16 @@ public class AddSuggestion extends AbstractGenericServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String titre = req.getParameter("titre");
-		String soustitre = req.getParameter("soustitre");
-		String text = req.getParameter("text");
+		String titre = req.getParameter("text");
+		String soustitre = req.getParameter("titre");
+		String text = req.getParameter("soustitre");
 		
 		Part SuggestionImage = req.getPart("image");
 		
 		
 		
 		 Suggestion nouvelSuggestion = new Suggestion(null, titre, soustitre, text);
-		// SuggestionService.getInstance().ajouterSuggestion(nouvelSuggestion, SuggestionImage);
+		SuggestionService.getInstance().ajouterSuggestion(nouvelSuggestion, SuggestionImage);
 	        
 	        
 		resp.setCharacterEncoding("UTF8");
