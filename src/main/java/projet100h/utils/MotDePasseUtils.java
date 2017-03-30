@@ -85,7 +85,7 @@ public class MotDePasseUtils {
 	// Génération des mots de passe de nos utilisateurs
 	public static void main(String[] args) {
 		try {
-			System.out.println(String.format("Sylvie=%s", MotDePasseUtils.genererMotDePasse("InstitutMDS")));
+			System.out.println(String.format("Sylvie.plus@hei.fr=%s", MotDePasseUtils.genererMotDePasse("InstitutMDS")));
 			
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
