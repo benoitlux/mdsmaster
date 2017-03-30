@@ -55,7 +55,7 @@ import projet100h.pojos.CalendarDTO;
 
 	    @Override
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	        RequestDispatcher view = request.getRequestDispatcher("/jsp/formulaire.jsp");
+	        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/templates/formulaire.html");
 	        view.forward(request, response);
 
 	    }

@@ -43,6 +43,7 @@ public class SupprimerPresta extends AbstractGenericServlet{
 		
 		
 		
+		
 		templateEngine.process("SupprimerPresta", context, resp.getWriter());
 	}
 	
