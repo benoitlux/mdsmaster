@@ -1,6 +1,7 @@
 package projet100h.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,14 +10,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.WebContext;
+
 import projet100h.services.EvenementManager;
+import projet100h.services.PrestationService;
 import projet100h.pojos.CalendarDTO;
+import projet100h.pojos.Prestation;
 
 
 	
 	@WebServlet("/ajouter")
 
-	public class AjoutServlet extends HttpServlet {
+	public class AjoutCalendrierServlet extends AbstractGenericServlet {
+		
+		@Override
+		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			TemplateEngine templateEngine = this.createTemplateEngine(req);
+			
+			WebContext context = new WebContext(req, resp, req.getServletContext());
+			
+			
+			
+			List<Prestation> listPrest= PrestationService.getInstance().listPrestation();
+			context.setVariable("prestations", listPrest);
+			
+			templateEngine.process("formulaireCalendrier", context, resp.getWriter());
+			
+		}
 
 	     /*
 	    * Servlet pour ajouter un événement
@@ -49,16 +70,13 @@ import projet100h.pojos.CalendarDTO;
 
 	        CalendarDTO nouvelEvenement = new CalendarDTO(null, evenement_nom, Sevenement_date_debut, evenement_heure_debut, Sevenement_date_fin, evenement_heure_fin, evenement_description, evenement_couleur);
 	        EvenementManager.getInstance().ajouterEvenement(nouvelEvenement);
+	        
+	        
 
 	        response.sendRedirect("calendrier");
 	    }
 
-	    @Override
-	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/templates/formulaire.html");
-	        view.forward(request, response);
-
-	    }
+	    
 
 	}
 

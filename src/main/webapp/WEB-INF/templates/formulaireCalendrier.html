@@ -60,8 +60,8 @@
             <div class="row">
                 <div class="input-field col offset-m2 s12 m8">
                 <select name="IdSousCat">
-						<option th:value="${souscategorie.idsouscategorie}"
-								th:each="souscategorie :${souscategorie.nom}"></option>
+						<option th:value="${prestation.dure}"
+								th:each="prestation :${prestations}">[[${prestation.nom}]]</option>
 				</select>
                 </div>
             </div>

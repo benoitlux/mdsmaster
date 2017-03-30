@@ -38,9 +38,9 @@ private PrestationDao PrestationDao = new PrestationDao();
 	}
 
 		
-	public void updatePrestation(Integer idPrestation, String nom, String description, String prix,Integer idsouscat
+	public void updatePrestation(Integer idPrestation, String nom, String description, String prix,Integer idsouscat, String dure
 			) throws IOException {
-		PrestationDao.updatePrestation(idPrestation, nom, description, prix, idsouscat);
+		PrestationDao.updatePrestation(idPrestation, nom, description, prix, idsouscat, dure);
 	}
 	
 	 public void ajouterPrestation(Prestation nouvelPrestation) {

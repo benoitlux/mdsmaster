@@ -55,11 +55,12 @@ public class ModifPresta extends AbstractGenericServlet{
 		String description = request.getParameter("description");
 		String prix = request.getParameter("prix");
 		Integer idsouscat = Integer.parseInt(request.getParameter("Idsouscat"));
+		String dure = request.getParameter("dure");
 		
 		
 				
 		
-		PrestationService.getInstance().updatePrestation(IdPresta, nom, description, prix, idsouscat);
+		PrestationService.getInstance().updatePrestation(IdPresta, nom, description, prix, idsouscat, dure);
 		response.setCharacterEncoding("UTF8");
 		response.sendRedirect("PrestationBack");
 	}

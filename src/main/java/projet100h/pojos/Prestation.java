@@ -7,20 +7,38 @@ public class Prestation {
 	private String description;
 	private String prix;
 	private Integer idsouscat;
+	private String dure;
 	
 	
 	
 	
-	public Prestation(Integer idprestation, String nom, String description, String prix, Integer idsouscat) {
+	public Prestation(Integer idprestation, String nom, String description, String prix, Integer idsouscat, String dure) {
 		super();
 		this.idprestation = idprestation;
 		this.nom = nom;
 		this.description = description;
 		this.prix = prix;
 		this.idsouscat = idsouscat;
+		this.dure = dure;
 	}
 	
 	
+	
+	
+	public String getDure() {
+		return dure;
+	}
+
+
+
+
+	public void setDure(String dure) {
+		this.dure = dure;
+	}
+
+
+
+
 	public Integer getIdprestation() {
 		return idprestation;
 	}

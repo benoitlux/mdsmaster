@@ -42,8 +42,9 @@ public class AddPresta extends AbstractGenericServlet{
 		String description = req.getParameter("description");
 		String prix = req.getParameter("prix");
 		Integer idsouscat = Integer.parseInt(req.getParameter("Idsouscat"));
+		String dure = req.getParameter("dure");
 		
-		 Prestation nouvelPrestation = new Prestation(null, nom, description, prix, idsouscat);
+		 Prestation nouvelPrestation = new Prestation(null, nom, description, prix, idsouscat, dure);
 	        PrestationService.getInstance().ajouterPrestation(nouvelPrestation);
 	        
 	        

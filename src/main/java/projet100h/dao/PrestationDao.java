@@ -23,7 +23,7 @@ public class PrestationDao {
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM prestation ")) {
 			while (resultSet.next()) {
-				Prestation.add(new Prestation(resultSet.getInt("idPrestation"),resultSet.getString("nom"),resultSet.getString("description"),resultSet.getString("prix"),resultSet.getInt("idsouscat")));
+				Prestation.add(new Prestation(resultSet.getInt("idPrestation"),resultSet.getString("nom"),resultSet.getString("description"),resultSet.getString("prix"),resultSet.getInt("idsouscat"), resultSet.getString("dure")));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -46,7 +46,8 @@ public class PrestationDao {
 						resultSet.getString("nom"),
 						resultSet.getString("description"),
 						resultSet.getString("prix"),
-						resultSet.getInt("idsouscat")
+						resultSet.getInt("idsouscat"),
+						resultSet.getString("dure")
 						
 						
 						
@@ -60,10 +61,10 @@ public class PrestationDao {
 		return Prestation;
 	}
 	
-	public void updatePrestation(Integer idPrestation, String nom, String description, String prix, Integer idsouscat			
+	public void updatePrestation(Integer idPrestation, String nom, String description, String prix, Integer idsouscat, String dure			
 			) {
 		try(Connection connection = DataSourceProvider.getDataSource().getConnection();
-		PreparedStatement statement = connection.prepareStatement("UPDATE prestation SET nom='"+nom+"', description='"+description+"', prix='"+prix+"', idsouscat='"+idsouscat+"' WHERE idPrestation= '"+idPrestation+"' ")){
+		PreparedStatement statement = connection.prepareStatement("UPDATE prestation SET nom='"+nom+"', description='"+description+"', prix='"+prix+"', idsouscat='"+idsouscat+"', dure='"+dure+"' WHERE idPrestation= '"+idPrestation+"' ")){
 		statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -76,7 +77,7 @@ public class PrestationDao {
 
         try {
             Connection connection = DataSourceProvider.getDataSource().getConnection();
-            PreparedStatement stmt = connection.prepareStatement("INSERT INTO prestation(nom, description, prix, idsouscat) VALUES(?, ?, ?, ?)");
+            PreparedStatement stmt = connection.prepareStatement("INSERT INTO prestation(nom, description, prix, idsouscat, dure) VALUES(?, ?, ?, ?, ?)");
 
 
             //Ajout des paramètres
@@ -84,6 +85,7 @@ public class PrestationDao {
             stmt.setString(2, Prestations.getDescription());
             stmt.setString(3, Prestations.getPrix());
             stmt.setInt(4, Prestations.getIdsouscat());
+            stmt.setString(5, Prestations.getDure());
             
             stmt.executeUpdate();
             stmt.close();
