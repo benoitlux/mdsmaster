@@ -94,8 +94,8 @@ public final class ConnexionForm {
      * Valide l'adresse email saisie.
      */
     private void validationEmail(String email) throws Exception {
-        if (email == null && !email.matches("^[a-z-]*\\.[a-z-]*@hei\\.fr$")) {
-            throw new Exception("Merci de saisir une adresse mail de la forme prenom.nom@hei.fr");
+        if (email == null && !email.matches("^[a-z-]*\\.[a-z-]*@outlook\\.fr$")) {
+            throw new Exception("Merci de saisir une adresse mail de forme valide");
         } else {
             try {
                 Connection connection = DataSourceProvider.getDataSource().getConnection();

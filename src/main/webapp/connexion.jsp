@@ -8,16 +8,7 @@
 
 <body class="grey lighten-4">
 
-<nav>
-    <div class="nav-wrapper red">
-        <ul id="nav-mobile" class="right">
 
-            <li>
-                <a href="inscription">Inscription</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
 <div class="container">
 
@@ -38,7 +29,7 @@
                         <input class="validate" type="email" id="email" name="email"
                                value="<c:out value="${utilisateur.utilisateur_mail}"/>"
                                size="20" maxlength="60"/>
-                        <label for="email">Adresse email @hei.fr <span class="requis">*</span></label>
+                        <label for="email">Adresse email <span class="requis">*</span></label>
 
                         <span class="erreur">${form.erreurs['email']}</span>
                     </div>
@@ -54,9 +45,7 @@
                     </div>
                 </div>
 
-                <div class="row center">
-                    <a class="blue-text" href="/inscription">Pas encore de compte? Inscris-toi</a>
-                </div>
+                
                 <div class="row">
                     <button class="waves-effect waves-light btn col offset-m4 offset-l5 s12 m4 l2" type="submit"
                             value="Connexion"
