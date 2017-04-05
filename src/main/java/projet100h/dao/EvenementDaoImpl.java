@@ -36,8 +36,7 @@ public class EvenementDaoImpl implements EvenementDao{
                         
                                 results.getString("evenement_date_debut"),
                                 results.getString("evenement_heure_debut"),
-                                results.getString("evenement_date_fin"),
-                                results.getString("evenement_heure_fin"),
+                             
                                 results.getString("evenement_description"),
                             
                                 results.getString("evenement_couleur")
@@ -65,7 +64,7 @@ public class EvenementDaoImpl implements EvenementDao{
 
 	        try {
 	            Connection connection = DataSourceProvider.getDataSource().getConnection();
-	            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenements(evenement_nom, evenement_date_debut, evenement_heure_debut, evenement_date_fin, evenement_heure_fin, evenement_description, evenement_couleur) VALUES(?, ?, ?, ?, ?, ?, ?)");
+	            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenements(evenement_nom, evenement_date_debut, evenement_heure_debut, evenement_description, evenement_couleur) VALUES(?, ?, ?, ?, ?)");
 
 
 	            //Ajout des paramètres
@@ -73,11 +72,10 @@ public class EvenementDaoImpl implements EvenementDao{
 	     
 	            stmt.setString(2, evenement.getEvenement_date_debut());
 	            stmt.setString(3, evenement.getEvenement_heure_debut());
-	            stmt.setString(4, evenement.getEvenement_date_fin());
-	            stmt.setString(5, evenement.getEvenement_heure_fin());
-	            stmt.setString(6, evenement.getEvenement_description());
+	      
+	            stmt.setString(4, evenement.getEvenement_description());
 	
-	            stmt.setString(7, evenement.getEvenement_couleur());
+	            stmt.setString(5, evenement.getEvenement_couleur());
 	            stmt.executeUpdate();
 	            stmt.close();
 
@@ -92,28 +90,5 @@ public class EvenementDaoImpl implements EvenementDao{
 	
 
 	 
-	 @Override
-	    public void calculEvenement(CalendarDTO evenement) {
-
-
-	        try {
-	            Connection connection = DataSourceProvider.getDataSource().getConnection();
-	            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenements(evenement_heure_fin) VALUES(?)");
-
-
-	            //Ajout des paramètres
-	            stmt.setString(1, evenement.getEvenement_heure_fin());
-	     
-	           
-	            stmt.executeUpdate();
-	            stmt.close();
-
-
-	            // Fermer la connexion
-	            connection.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	    }
-
+	 
 }

@@ -12,5 +12,5 @@ public interface EvenementDao {
     /*ajoute l'évenement à la bdd*/
     public void ajouterEvenement(CalendarDTO evenements);
 
-	public void calculEvenement(CalendarDTO evenement);
+	
 }

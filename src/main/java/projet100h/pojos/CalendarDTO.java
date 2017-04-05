@@ -11,14 +11,13 @@ public class CalendarDTO {
 	   
 	    private String evenement_date_debut;
 	    private String evenement_heure_debut;
-	    private String evenement_date_fin;
-	    private String evenement_heure_fin;
+
 	    private String evenement_description;
 	    private String evenement_couleur;
 
 
 	    public CalendarDTO(Integer evenement_id, String evenement_nom,
-	                     String evenement_date_debut, String evenement_heure_debut, String evenement_date_fin, String evenement_heure_fin,
+	                     String evenement_date_debut, String evenement_heure_debut,
 	                     String evenement_description, String evenement_couleur) {
 	        super();
 	        this.evenement_id = evenement_id;
@@ -26,8 +25,7 @@ public class CalendarDTO {
 	   
 	        this.evenement_date_debut = evenement_date_debut;
 	        this.evenement_heure_debut = evenement_heure_debut;
-	        this.evenement_date_fin = evenement_date_fin;
-	        this.evenement_heure_fin = evenement_heure_fin;
+
 	        this.evenement_description = evenement_description;
 
 	        this.evenement_couleur = evenement_couleur;
@@ -80,24 +78,7 @@ public class CalendarDTO {
 	    }
 
 
-	    public String getEvenement_date_fin() {
-	        return evenement_date_fin;
-	    }
-
-
-	    public void setEvenement_date_fin(String evenement_date_fin) {
-	        this.evenement_date_fin = evenement_date_fin;
-	    }
-
-
-	    public String getEvenement_heure_fin() {
-	        return evenement_heure_fin;
-	    }
-
-
-	    public void setEvenement_heure_fin(String evenement_heure_fin) {
-	        this.evenement_heure_fin = evenement_heure_fin;
-	    }
+	 
 
 
 	    public String getEvenement_description() {

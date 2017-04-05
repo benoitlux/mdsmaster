@@ -103,12 +103,12 @@ $(document).ready(function () {
     
         events: [
             <c:forEach var="evenements" items="${evenements}" varStatus="pStatus">
-            <c:forEach var="prestation" items="${prestation}" varStatus="pStatus1">
+     
             {
                 id: '${evenements.evenement_id}',
                 title: 'RDV non disponible',
                 start: '${evenements.evenement_date_debut}T${evenements.evenement_heure_debut}Z',
-                defaultTimedEventDuration: '${evenements.evenement_date_debut}T${prestation.dure}Z',
+                end: moment('${evenements.evenement_date_debut}T${evenements.evenement_heure_debut}Z').add('hours', 6),
               
 
            
@@ -116,7 +116,7 @@ $(document).ready(function () {
 
             },
 
-            </c:forEach>
+     
             </c:forEach>
         ],
         
