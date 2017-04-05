@@ -39,7 +39,8 @@ public class EvenementDaoImpl implements EvenementDao{
                              
                                 results.getString("evenement_description"),
                             
-                                results.getString("evenement_couleur")
+                                results.getString("evenement_couleur"),
+                                results.getString("duree")
 
                         )
                 );
@@ -64,7 +65,7 @@ public class EvenementDaoImpl implements EvenementDao{
 
 	        try {
 	            Connection connection = DataSourceProvider.getDataSource().getConnection();
-	            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenements(evenement_nom, evenement_date_debut, evenement_heure_debut, evenement_description, evenement_couleur) VALUES(?, ?, ?, ?, ?)");
+	            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenements(evenement_nom, evenement_date_debut, evenement_heure_debut, evenement_description, evenement_couleur,duree) VALUES(?,?, ?, ?, ?, ?)");
 
 
 	            //Ajout des paramètres
@@ -76,6 +77,7 @@ public class EvenementDaoImpl implements EvenementDao{
 	            stmt.setString(4, evenement.getEvenement_description());
 	
 	            stmt.setString(5, evenement.getEvenement_couleur());
+	            stmt.setString(6, evenement.getDuree());
 	            stmt.executeUpdate();
 	            stmt.close();
 

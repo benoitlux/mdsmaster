@@ -14,11 +14,11 @@ public class CalendarDTO {
 
 	    private String evenement_description;
 	    private String evenement_couleur;
-
+	    private String duree;
 
 	    public CalendarDTO(Integer evenement_id, String evenement_nom,
 	                     String evenement_date_debut, String evenement_heure_debut,
-	                     String evenement_description, String evenement_couleur) {
+	                     String evenement_description, String evenement_couleur, String duree) {
 	        super();
 	        this.evenement_id = evenement_id;
 	        this.evenement_nom = evenement_nom;
@@ -29,19 +29,30 @@ public class CalendarDTO {
 	        this.evenement_description = evenement_description;
 
 	        this.evenement_couleur = evenement_couleur;
+	        this.duree = duree;
 
 	    }
 
 	    /**
 	     * Getter et Setter
 	     */
+	    
+	    
 
 	    public Integer getEvenement_id() {
 	        return evenement_id;
 	    }
 
 
-	    public void setEvenement_id(Integer evenement_id) {
+	    public String getDuree() {
+			return duree;
+		}
+
+		public void setDuree(String duree) {
+			this.duree = duree;
+		}
+
+		public void setEvenement_id(Integer evenement_id) {
 	        this.evenement_id = evenement_id;
 	    }
 

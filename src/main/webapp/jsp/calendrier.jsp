@@ -76,6 +76,8 @@ $(document).ready(function () {
        
         
         defaultView: 'agendaWeek',
+       
+        
         color: 'grey lighten-4',     // an option!
 		hiddenDays: [0, 1],
 		
@@ -100,6 +102,9 @@ $(document).ready(function () {
             center: 'title',
             right: 'agendaWeek,agendaDay',
         },
+        
+        slotEventOverlap:false,
+       
     
         events: [
             <c:forEach var="evenements" items="${evenements}" varStatus="pStatus">
@@ -108,7 +113,7 @@ $(document).ready(function () {
                 id: '${evenements.evenement_id}',
                 title: 'RDV non disponible',
                 start: '${evenements.evenement_date_debut}T${evenements.evenement_heure_debut}Z',
-                end: moment('${evenements.evenement_date_debut}T${evenements.evenement_heure_debut}Z').add('hours', 6),
+                end: moment('${evenements.evenement_date_debut}T${evenements.evenement_heure_debut}Z').add('hours', '${evenements.duree}'),
               
 
            
@@ -121,11 +126,16 @@ $(document).ready(function () {
         ],
         
         
-
-              
+      
+        
 		});
 	
 });
+
+
+
+
+
 
 </script>
 

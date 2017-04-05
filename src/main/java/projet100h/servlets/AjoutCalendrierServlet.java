@@ -59,13 +59,13 @@ import projet100h.pojos.Prestation;
 	        String evenement_heure_debut = Sevenement_heure_debut.concat(Sevenement_minute_debut);
 
 	
-	        
+	       
 	        
 
 	        String evenement_couleur = request.getParameter("evenement_couleur");
+	        String duree = request.getParameter("dure");
 
-
-	        CalendarDTO nouvelEvenement = new CalendarDTO(null, evenement_nom, Sevenement_date_debut, evenement_heure_debut, evenement_description, evenement_couleur);
+	        CalendarDTO nouvelEvenement = new CalendarDTO(null, evenement_nom, Sevenement_date_debut, evenement_heure_debut, evenement_description, evenement_couleur,duree);
 	        EvenementManager.getInstance().ajouterEvenement(nouvelEvenement);
 	        
 	        
