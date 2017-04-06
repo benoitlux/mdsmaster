@@ -1,6 +1,7 @@
 package projet100h.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,8 +16,10 @@ import org.thymeleaf.context.WebContext;
 import projet100h.pojos.Horaires;
 import projet100h.pojos.Informations;
 import projet100h.pojos.Prestation;
+import projet100h.pojos.SousCategorie;
 import projet100h.services.InformationsService;
 import projet100h.services.PrestationService;
+import projet100h.services.SousCategorieService;
 
 
 
@@ -31,6 +34,10 @@ public class AddPresta extends AbstractGenericServlet{
 		TemplateEngine templateEngine = this.createTemplateEngine(req);
 		
 		WebContext context = new WebContext(req, resp, req.getServletContext());
+		
+		List<SousCategorie> listSousCat= SousCategorieService.getInstance().listSousCategorie();
+		context.setVariable("souscat", listSousCat);
+		
 		
 		templateEngine.process("AddPresta", context, resp.getWriter());
 	}

@@ -65,28 +65,26 @@
 												<input type="text" class="form-control" name="prix">
 											</div>
 										</div>
+										
+										<div class="form-group">
+											<label class="col-sm-2 control-label">Durée :</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" name="dure">
+											</div>
+										</div>
+										
+										
 										<div class="form-group">
 											<label class="col-sm-2 control-label">Sélectionner sa
 												catégorie </label><br /> <select name="Idsouscat">
-												<option value=1>Nettoyage Profond</option>
-												<option value=2>Hydratation Intense</option>
-												<option value=3>Anti-Age</option>
-												<option value=4>Soins Bien-Etre</option>
-												<option value=5>Prestations Soins spécifiques</option>
-												<option value=6>Prestations Parcours Bien-Etre</option>
-												<option value=7>Exfoliation</option>
-												<option value=8>Hydratation</option>
-												<option value=9>Relaxationn</option>
-												<option value=10>Forfait Bronzage (UVA)</option>
-												<option value=11>Les spécifiques</option>
-												<option value=12>Forfaits Epilation</option>
-												<option value=13>Prestations Regard et Maquillage</option>
+												<option th:value="${souscategorie.idsouscategorie}"
+													th:each="souscategorie :${souscat}">[[${souscategorie.nom}]]</option>
 
 											</select>
 
-
 										</div>
-
+										
+										
 
 									</div>
 

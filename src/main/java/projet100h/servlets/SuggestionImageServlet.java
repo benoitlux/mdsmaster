@@ -22,6 +22,8 @@ public class SuggestionImageServlet extends HttpServlet{
 		Path picturePath = SuggestionService.getInstance().getPicturePath(ImageSuggestion);
 		
 		Files.copy(picturePath, resp.getOutputStream());
+		System.out.println("bon");
 	}
+	
 
 }

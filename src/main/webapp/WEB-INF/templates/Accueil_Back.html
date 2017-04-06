@@ -5,11 +5,11 @@
 			
 			<script src="../bootstrap/jquery/jquery-3.1.1.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
-			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-			<link href="../css/accueil.css" rel="stylesheet">
-			<link rel="stylesheet" href="../css/navbar.css">
-			<link rel="stylesheet" href="../css/footer.css">
-			<link rel="stylesheet" href="../css/back.css">
+			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"></link>
+			<link href="../css/accueil.css" rel="stylesheet"></link>
+			<link rel="stylesheet" href="../css/navbar.css"></link>
+			<link rel="stylesheet" href="../css/footer.css"></link>
+			<link rel="stylesheet" href="../css/back.css"></link>
 			<script type="text/javascript" src="../js/script.js"></script>
 			
 		
@@ -144,9 +144,6 @@
 	<p col-lg-4><a  href="AddSuggestion" >Ajouter Suggestion</a></p>
 	<p col-lg-4><a  href="SupprimerSuggestion" >Supprimer Suggestion</a></p>
 	
-	
-	
-	
 	</div>
 	
 	<!-- Suggestion -->
@@ -154,7 +151,7 @@
 	<div id="suggestion">
 		<section class="suggestion-home">
 		  <div class="container">
-			<div class="" >
+			
 			  
 			  <div class="row-page row" >
 			 
@@ -162,6 +159,7 @@
 				<div class="col-page col-sm-4 col-md-3" th:each="suggestion :${suggestions}" th:id="${suggestion.idsuggestion}"  >
 				<!-- Met ton ancre dans le lien -->
 				  <a href="PrestationBack"  class="cadre">
+					
 					<div class="imgmin">
 					<figure class="effect-roxy-accueil" >
 					  <img class="img-responsive taille" th:src="'SuggestionImage?idsuggestion='+${suggestion.idsuggestion}"/>

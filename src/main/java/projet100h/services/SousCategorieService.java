@@ -28,8 +28,8 @@ private SousCategorieDao SousCategorieDao = new SousCategorieDao();
 	
 	
 
-	 public List<SousCategorie> listeSousCategories() {
-	        return SousCategorieDao.listeSousCategories();
+	 public List<SousCategorie> listSousCategorie() {
+	        return SousCategorieDao.listSousCategorie();
 
 	    }
 	

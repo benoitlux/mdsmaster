@@ -1,5 +1,6 @@
 package projet100h.services;
 
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
@@ -19,7 +20,7 @@ public class SuggestionService {
 private projet100h.dao.SuggestionDao SuggestionDao = new projet100h.dao.SuggestionDao();
 	
 	
-	private static final String PICTURE_MAIN_DIRECTORY = "C:/HEI/data";
+	private static final String PICTURE_MAIN_DIRECTORY = "C:/Users/benoit/Desktop/HEIT";
 	
 	private static class SuggestionServiceHolder {
 		private static SuggestionService instance = new SuggestionService();
@@ -45,15 +46,15 @@ private projet100h.dao.SuggestionDao SuggestionDao = new projet100h.dao.Suggesti
 		SuggestionDao.updateSuggestions(idsuggestion, text, titre, soustitre);
 	}
 	
-	 public void ajouterSuggestion(Suggestion nouvelSuggestion, Part Image) {
+	 public void ajouterSuggestion(Suggestion nouvelSuggestion, Part picture) {
 		 
-		 Path imagePath = Paths.get(PICTURE_MAIN_DIRECTORY);
+		 Path picturePath = Paths.get(PICTURE_MAIN_DIRECTORY, picture.getSubmittedFileName());
 	        
 
-		 SuggestionDao.ajouterSuggestion(nouvelSuggestion, imagePath.toString());
+		 SuggestionDao.ajouterSuggestion(nouvelSuggestion, picturePath.toString());
 		 
 		 try{
-		 Files.copy(Image.getInputStream(), imagePath);
+		 Files.copy(picture.getInputStream(), picturePath);
 		 }catch (IOException e){
 			 e.printStackTrace();
 		 }

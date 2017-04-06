@@ -39,8 +39,9 @@ public class ModifPresta extends AbstractGenericServlet{
 		List<Prestation> listPrest= PrestationService.getInstance().listPrestation();
 		context.setVariable("prestations", listPrest);
 		
+		List<SousCategorie> listSousCat= SousCategorieService.getInstance().listSousCategorie();
+		context.setVariable("souscat", listSousCat);
 		
-		context.setVariable("souscategories", SousCategorieService.getInstance().listeSousCategories());
 		
 		
 		templateEngine.process("ModifPresta", context, resp.getWriter());

@@ -10,46 +10,28 @@ import java.util.List;
 
 
 import projet100h.pojos.SousCategorie;
+import projet100h.pojos.Suggestion;
 
 
 
 public class SousCategorieDao {
 	
-	 public List<SousCategorie> listeSousCategories() {
-	        List<SousCategorie> listeSousCategories = new ArrayList<SousCategorie>();
-	        try {
-	            // Créer une nouvelle connexion à la BDD
-	            Connection connection = DataSourceProvider.getDataSource().getConnection();
+	public List<SousCategorie> listSousCategorie() {
+		List<SousCategorie> SousCategories = new ArrayList<SousCategorie>();
 
-	            // Utiliser la connexion
-	            Statement stmt = connection.createStatement();
-	            ResultSet results = stmt.executeQuery("SELECT * FROM souscategorie");
-	            while (results.next()) {
+		try (Connection connection = DataSourceProvider.getDataSource().getConnection();
+				Statement statement = connection.createStatement();
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM souscategorie")) {
+			while (resultSet.next()) {
+				SousCategories.add(new SousCategorie(resultSet.getInt("idsouscategorie"),resultSet.getString("nom"),resultSet.getInt("idcat")));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
 
-
-	                //Récupération des paramètres
-	                listeSousCategories.add(new SousCategorie(
-	                                results.getInt("idsouscat"),
-	                                results.getString("nom"),
-	                                
-	                                results.getInt("idcat")
-
-	                        )
-	                );
-	            }
-	            //ferme la connexion
-	            stmt.close();
-
-	        } catch (
-
-	                SQLException e)
-
-	        {
-
-	            e.printStackTrace();
-	        }
-	        return listeSousCategories;
-	    }
+		return SousCategories;
+	}
 	
 	public SousCategorie getSousCategorie(Integer id) {
 		SousCategorie SousCategorie = null;
