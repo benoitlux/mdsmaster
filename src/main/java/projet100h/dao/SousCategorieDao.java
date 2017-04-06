@@ -7,10 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import projet100h.pojos.Prestation;
 import projet100h.pojos.SousCategorie;
-import projet100h.pojos.Suggestion;
+
 
 
 
@@ -49,6 +47,25 @@ public class SousCategorieDao {
             stmt.executeUpdate();
             stmt.close();
 
+
+            // Fermer la connexion
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+	
+	public void supprimerSousCategorie(Integer idsouscategorie) {
+
+        try {
+            Connection connection = DataSourceProvider.getDataSource().getConnection();
+
+            // Utiliser la connexion
+            PreparedStatement stmt = connection.prepareStatement(
+                    "DELETE FROM souscategorie WHERE idsouscategorie=?");
+            stmt.setInt(1, idsouscategorie);
+            stmt.executeUpdate();
+            stmt.close();
 
             // Fermer la connexion
             connection.close();

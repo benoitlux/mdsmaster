@@ -21,7 +21,7 @@
 		</div>
 
 	</div>
-	</div>
+	
 
 
 	<div class="container">
@@ -36,12 +36,12 @@
 
 
 							<form class="form-horizontal" method="post"
-								action="SupprimerPresta">
+								action="SupprimerSousCategorie">
 
 								<div class='row'>
 									<div class="col-lg-12">
 										<div class="Titre">
-											<span class="prg">Information Prestation</span>
+											<span class="prg">Information Catégorie</span>
 										</div>
 									</div>
 								</div>
@@ -49,10 +49,10 @@
 
 									<div class="col-lg-6">
 
-										<label>Sélectionner la prestation à supprimer :</label><br />
-										<select name="IdPresta">
-											<option th:value="${prestation.idprestation}"
-												th:each="prestation :${prestations}">[[${prestation.nom}]]</option>
+										<label>Sélectionner la catégorie à supprimer :</label><br />
+										<select name="Idsouscat">
+											<option th:value="${souscategorie.idsouscategorie}"
+												th:each="souscategorie :${souscat}">[[${souscategorie.nom}]]</option>
 
 										</select>
 

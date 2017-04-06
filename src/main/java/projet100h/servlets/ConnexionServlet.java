@@ -1,12 +1,6 @@
 package projet100h.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import projet100h.dao.ConnexionForm;
 import projet100h.pojos.Utilisateur;
-import projet100h.utils.MotDePasseUtils;
+
 
 @WebServlet("/connexion")
 public class ConnexionServlet extends HttpServlet {
@@ -25,7 +19,11 @@ public class ConnexionServlet extends HttpServlet {
     * Servlet de connexion
      */
 
-    public static final String ATT_USER = "utilisateur";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static final String ATT_USER = "utilisateur";
     public static final String ATT_FORM = "form";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
     public static final String ATT_TYPE = "sessionType";

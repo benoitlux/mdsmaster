@@ -1,17 +1,11 @@
 package projet100h.services;
-
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-
 import javax.servlet.http.Part;
-
-import projet100h.dao.PrestationDao;
-import projet100h.pojos.Prestation;
 import projet100h.pojos.Suggestion;
 
 

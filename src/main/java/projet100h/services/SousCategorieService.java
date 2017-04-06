@@ -1,11 +1,6 @@
 package projet100h.services;
-
-import java.io.IOException;
 import java.util.List;
-
-
 import projet100h.dao.SousCategorieDao;
-import projet100h.pojos.Prestation;
 import projet100h.pojos.SousCategorie;
 
 
@@ -37,6 +32,12 @@ private SousCategorieDao SousCategorieDao = new SousCategorieDao();
 	        
 
 	        SousCategorieDao.ajouterSousCategorie(nouvelleSousCategorie);
+	    }
+	 
+	 public void supprimerSousCategorie(Integer idsouscategorie) {
+
+
+	        SousCategorieDao.supprimerSousCategorie(idsouscategorie);
 	    }
 	
 	

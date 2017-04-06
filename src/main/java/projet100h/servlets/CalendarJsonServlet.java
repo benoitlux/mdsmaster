@@ -21,6 +21,11 @@ import projet100h.pojos.CalendarDTO;
 @WebServlet("/calendrier")
 public class CalendarJsonServlet extends HttpServlet{
 
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 	

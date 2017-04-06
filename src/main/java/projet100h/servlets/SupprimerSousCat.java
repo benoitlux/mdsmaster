@@ -1,26 +1,23 @@
 package projet100h.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
-
-import projet100h.services.InformationsService;
-
-
+import projet100h.pojos.SousCategorie;
+import projet100h.services.SousCategorieService;
 
 
 
-@WebServlet("/admin/AjoutCaroussel")
-@MultipartConfig
-public class AjoutCaroussel extends AbstractGenericServlet{
+
+
+@WebServlet("/admin/SupprimerSousCategorie")
+public class SupprimerSousCat extends AbstractGenericServlet{
 
 	private static final long serialVersionUID = -3032812618526895052L;
 
@@ -30,22 +27,34 @@ public class AjoutCaroussel extends AbstractGenericServlet{
 		
 		WebContext context = new WebContext(req, resp, req.getServletContext());
 		
-		templateEngine.process("AjoutCaroussel", context, resp.getWriter());
+		
+		
+		List<SousCategorie> listSousCat= SousCategorieService.getInstance().listSousCategorie();
+		context.setVariable("souscat", listSousCat);
+		
+		
+		
+		
+		
+		
+		templateEngine.process("SupprimerSousCat", context, resp.getWriter());
 	}
 	
-	/*@Override
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		Part PhotoCaroussel = req.getPart("photo");
+		
+		Integer Idsouscat = Integer.parseInt(req.getParameter("Idsouscat"));
 		
 		
 		
-		InformationsService.getInstance().updateContact(Telephone1, Telephone2, Mail);
+				
 		
-		resp.sendRedirect("AccueilBack");
-	}*/
-	
-	
+		SousCategorieService.getInstance().supprimerSousCategorie(Idsouscat);
+		
+		resp.setCharacterEncoding("UTF8");
+		resp.sendRedirect("PrestationBack");
+	}
 
 	
 }

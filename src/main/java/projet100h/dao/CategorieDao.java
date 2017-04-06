@@ -1,7 +1,7 @@
 package projet100h.dao;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import projet100h.pojos.Categorie;
-import projet100h.pojos.Prestation;
+
 
 
 

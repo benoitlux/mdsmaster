@@ -6,13 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
-
-import projet100h.pojos.Horaires;
-import projet100h.pojos.Informations;
 import projet100h.services.InformationsService;
 
 

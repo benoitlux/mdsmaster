@@ -1,15 +1,8 @@
 package projet100h.dao;
-
-
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-
 import projet100h.dao.DataSourceProvider;
 import projet100h.pojos.Utilisateur;
-import projet100h.utils.MotDePasseUtils;
+
 
 
 public class UtilisateurDao {

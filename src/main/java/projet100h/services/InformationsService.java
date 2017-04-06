@@ -1,9 +1,6 @@
 package projet100h.services;
-
 import java.io.IOException;
 import java.util.List;
-
-
 import projet100h.dao.InformationsDao;
 import projet100h.pojos.Contact;
 import projet100h.pojos.Horaires;
@@ -13,10 +10,7 @@ import projet100h.pojos.Informations;
 
 public class InformationsService {
 	
-	private InformationsDao informationsDao = new InformationsDao();
-	
-	
-	private static final String PICTURE_MAIN_DIRECTORY = "C:/HEI/data";
+		
 	
 	private static class InformationsServiceHolder {
 		private static InformationsService instance = new InformationsService();

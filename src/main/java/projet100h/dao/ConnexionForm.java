@@ -93,7 +93,8 @@ public final class ConnexionForm {
     /**
      * Valide l'adresse email saisie.
      */
-    private void validationEmail(String email) throws Exception {
+    @SuppressWarnings("null")
+	private void validationEmail(String email) throws Exception {
         if (email == null && !email.matches("^[a-z-]*\\.[a-z-]*@outlook\\.fr$")) {
             throw new Exception("Merci de saisir une adresse mail de forme valide");
         } else {

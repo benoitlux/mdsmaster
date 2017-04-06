@@ -1,6 +1,4 @@
 package projet100h.dao;
-
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,9 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import projet100h.pojos.Informations;
-import projet100h.pojos.Prestation;
 import projet100h.pojos.Suggestion;
 
 

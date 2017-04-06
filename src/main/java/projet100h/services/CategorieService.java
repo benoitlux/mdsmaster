@@ -1,9 +1,5 @@
 package projet100h.services;
-
-import java.io.IOException;
 import java.util.List;
-
-
 import projet100h.dao.CategorieDao;
 import projet100h.pojos.Categorie;
 

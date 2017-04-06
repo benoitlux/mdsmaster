@@ -1,11 +1,7 @@
 package projet100h.services;
-
 import java.io.IOException;
 import java.util.List;
-
-
 import projet100h.dao.PrestationDao;
-import projet100h.pojos.Informations;
 import projet100h.pojos.Prestation;
 
 
@@ -14,7 +10,7 @@ public class PrestationService {
 private PrestationDao PrestationDao = new PrestationDao();
 	
 	
-	private static final String PICTURE_MAIN_DIRECTORY = "C:/HEI/data";
+	
 	
 	private static class PrestationServiceHolder {
 		private static PrestationService instance = new PrestationService();
