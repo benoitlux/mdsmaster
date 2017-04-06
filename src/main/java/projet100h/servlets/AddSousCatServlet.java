@@ -8,21 +8,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
 import projet100h.pojos.Categorie;
-import projet100h.pojos.Prestation;
+
 import projet100h.pojos.SousCategorie;
 import projet100h.services.CategorieService;
-import projet100h.services.InformationsService;
-import projet100h.services.PrestationService;
+
 import projet100h.services.SousCategorieService;
 
 
 
-@WebServlet("/Prestation")
-public class PrestationServlet extends AbstractGenericServlet{
+
+@WebServlet("/admin/AddSousCat")
+public class AddSousCatServlet extends AbstractGenericServlet{
 
 	private static final long serialVersionUID = -3032812618526895052L;
 
@@ -32,18 +33,26 @@ public class PrestationServlet extends AbstractGenericServlet{
 		
 		WebContext context = new WebContext(req, resp, req.getServletContext());
 		
-		List<Prestation> listPrest= PrestationService.getInstance().listPrestation();
-		context.setVariable("prestations", listPrest);
-		
-		context.setVariable("information", InformationsService.getInstance().getInformations(1));
-		
-		List<SousCategorie> listSousCat= SousCategorieService.getInstance().listSousCategorie();
-		context.setVariable("souscat", listSousCat);
-		
 		List<Categorie> listCat= CategorieService.getInstance().listCategorie();
 		context.setVariable("cat", listCat);
 		
-		templateEngine.process("prestation", context, resp.getWriter());
+		
+		templateEngine.process("AddSousCat", context, resp.getWriter());
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String nom = req.getParameter("nom");
+		Integer idcat = Integer.parseInt(req.getParameter("Idcat"));
+		
+		
+		 SousCategorie nouvelleSousCategorie = new SousCategorie(null, nom, idcat);
+		 SousCategorieService.getInstance().ajouterSousCategorie(nouvelleSousCategorie);
+	        
+	        
+		resp.setCharacterEncoding("UTF8");
+		resp.sendRedirect("PrestationBack");
 	}
 
 	

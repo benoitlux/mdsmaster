@@ -5,7 +5,7 @@ import java.util.List;
 
 
 import projet100h.dao.SousCategorieDao;
-
+import projet100h.pojos.Prestation;
 import projet100h.pojos.SousCategorie;
 
 
@@ -33,16 +33,11 @@ private SousCategorieDao SousCategorieDao = new SousCategorieDao();
 
 	    }
 	
-	public SousCategorie getSousCategorie(Integer id) {
-		return SousCategorieDao.getSousCategorie(id);
-	}
+	 public void ajouterSousCategorie(SousCategorie nouvelleSousCategorie) {
+	        
 
-		
-	public void updatesouscategorie(Integer idsouscategorie, String nom, Integer idcat
-			) throws IOException {
-		SousCategorieDao.updatesouscategorie(idsouscategorie, nom, idcat);
-	}
-	
+	        SousCategorieDao.ajouterSousCategorie(nouvelleSousCategorie);
+	    }
 	
 	
 }
