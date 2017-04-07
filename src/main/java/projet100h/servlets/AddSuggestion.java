@@ -43,7 +43,7 @@ public class AddSuggestion extends AbstractGenericServlet{
 		String soustitre = req.getParameter("titre");
 		String text = req.getParameter("soustitre");
 		
-		Part SuggestionImage = req.getPart("image");
+		Part SuggestionImage = req.getPart("idsuggestion");
 		
 		
 		

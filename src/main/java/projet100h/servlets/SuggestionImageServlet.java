@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import projet100h.services.SuggestionService;
 
 
-@WebServlet("/SuggestionImage")
+@WebServlet({"/admin/SuggestionImage", "/SuggestionImage"})
+
 public class SuggestionImageServlet extends HttpServlet{
 	/**
 	 * 
@@ -23,11 +24,11 @@ public class SuggestionImageServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		Integer ImageSuggestion = Integer.parseInt(req.getParameter("image"));
+		Integer ImageSuggestion = Integer.parseInt(req.getParameter("idsuggestion"));
 		Path picturePath = SuggestionService.getInstance().getPicturePath(ImageSuggestion);
 		
 		Files.copy(picturePath, resp.getOutputStream());
-		System.out.println("bon");
+		
 	}
 	
 

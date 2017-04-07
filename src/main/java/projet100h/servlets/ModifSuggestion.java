@@ -42,9 +42,9 @@ public class ModifSuggestion extends AbstractGenericServlet{
 		
 		
 		Integer Idsuggestion =Integer.parseInt(req.getParameter("Idsuggestion"));
-		String titre = req.getParameter("titre");
-		String soustitre = req.getParameter("soustitre");
-		String text = req.getParameter("text");
+		String titre = req.getParameter("text");
+		String soustitre = req.getParameter("titre");
+		String text = req.getParameter("soustitre");
 		
 		
 		

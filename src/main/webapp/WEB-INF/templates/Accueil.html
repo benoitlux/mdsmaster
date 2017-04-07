@@ -141,17 +141,18 @@
 	<div id="suggestion">
 		<section class="suggestion-home">
 		  <div class="container">
-			<div class="" >
+			
 			  
 			  <div class="row-page row" >
 			 
 			 <!-- Définir la taille de mes blocs -->
-				<div class="col-page col-sm-4 col-md-3" th:each="suggestion :${suggestions}"  >
+				<div class="col-page col-sm-4 col-md-3" th:each="suggestion :${suggestions}" th:id="${suggestion.idsuggestion}"  >
 				<!-- Met ton ancre dans le lien -->
-				  <a href="Prestation"  class="cadre">
+				  <a href="PrestationBack"  class="cadre">
+					
 					<div class="imgmin">
-					<figure class="effect-roxy-accueil">
-					  <img class="img-responsive taille" th:src="'suggestionimage?idsuggestion='+${suggestion.idsuggestion}"/>
+					<figure class="effect-roxy-accueil" >
+					  <img class="img-responsive taille" th:src="'SuggestionImage?idsuggestion='+${suggestion.idsuggestion}"/>
 					  </figure>
 					</div>
 					<div class="txtmin">
