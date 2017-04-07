@@ -2,6 +2,7 @@
 <head>
 
 <title>Modification contact</title>
+<meta charset="utf-8">
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"></link>
 <link href="../css/form.css" rel="stylesheet"></link>
 
@@ -43,8 +44,8 @@
 
 
 										<div class="form-group">
-											<label class="col-sm-2 control-label">Sélectionner la
-												suggestion à modifier </label><br />
+											<label class="col-sm-2 control-label">SÃ©lectionner la
+												suggestion Ã  modifier </label><br />
 												 <select name="Idsuggestion">
 												<option th:value="${suggestion.idsuggestion}"
 													th:each="suggestion :${suggestions}">[[${suggestion.titre}]]</option>

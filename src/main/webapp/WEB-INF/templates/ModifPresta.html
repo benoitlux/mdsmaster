@@ -2,6 +2,7 @@
 <head>
 
 <title>Modification contact</title>
+<meta charset="utf-8">
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"></link>
 <link href="../css/form.css" rel="stylesheet"></link>
 
@@ -43,8 +44,8 @@
 
 
 										<div class="form-group">
-											<label class="col-sm-2 control-label">Sélectionner la
-												prestation à modifier </label><br /> <select name="IdPresta">
+											<label class="col-sm-2 control-label">SÃ©lectionner la
+												prestation Ã  modifier </label><br /> <select name="IdPresta">
 												<option th:value="${prestation.idprestation}"
 													th:each="prestation :${prestations}">[[${prestation.nom}]]</option>
 
@@ -55,8 +56,8 @@
 																			
 											
 										<div class="form-group">
-											<label class="col-sm-2 control-label">Sélectionner sa
-												catégorie </label><br /> <select name="Idsouscat">
+											<label class="col-sm-2 control-label">SÃ©lectionner sa
+												catÃ©gorie </label><br /> <select name="Idsouscat">
 												<option th:value="${souscategorie.idsouscategorie}"
 													th:each="souscategorie :${souscat}">[[${souscategorie.nom}]]</option>
 

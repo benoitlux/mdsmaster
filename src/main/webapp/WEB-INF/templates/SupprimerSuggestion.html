@@ -2,7 +2,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta charset="utf-8">
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"></link>
 <link href="../css/form.css" rel="stylesheet"></link>
 
@@ -49,7 +49,7 @@
 
 									<div class="col-lg-6">
 
-										<label>Sélectionner la suggestion à supprimer :</label><br />
+										<label>SÃ©lectionner la suggestion Ã  supprimer :</label><br />
 										<select name="idsuggestion">
 											<option th:value="${suggestion.idsuggestion}"
 												th:each="suggestion :${suggestions}">[[${suggestion.titre}]]</option>

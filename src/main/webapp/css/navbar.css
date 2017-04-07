@@ -52,7 +52,7 @@
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 1024px){
 	.logo_header{
 		visibility:hidden;
 		
@@ -62,7 +62,7 @@
 	width:30 px;
 }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
 	  .navbar {
       margin-bottom: 0;
       background:#fff;

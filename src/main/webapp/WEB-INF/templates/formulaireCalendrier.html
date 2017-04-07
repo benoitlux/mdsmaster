@@ -3,7 +3,8 @@
 
 
 
-<title>Insert title here</title>
+<title>Formulaire Calendrier</title>
+<meta charset="utf-8">
 </head>
 
 <header>
@@ -54,7 +55,7 @@
         <form method="post" action="ajouter">
             <div class="row">
 
-                <!-- ************ Informations générales *********   -->
+                <!-- ************ Informations gÃ©nÃ©rales *********   -->
 
                 
 
@@ -90,25 +91,25 @@
             
 
 
-            <!-- ************ Début *********   -->
+            <!-- ************ DÃ©but *********   -->
 
             <div class="row">
-                <span style="margin-top: 20px;" class="flow-text col offset-m2">Début</span>
+                <span style="margin-top: 20px;" class="flow-text col offset-m2">DÃ©but</span>
             </div>
 
             <div class="row">
                 <div class="input-field col offset-m2 s12 m8">
-                    <!-- <label for="debut">Date de début</label> -->
+                    <!-- <label for="debut">Date de dÃ©but</label> -->
                     <input type="date" id="evenement_date_debut" name="evenement_date_debut" class="datepicker"
                            required/>
-                    <label for="evenement_date_debut">Date début</label>
+                    <label for="evenement_date_debut">Date dÃ©but</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col offset-m2 s6 m4">
                     <select name="evenement_heure_debut" required>
-                        <option value="" disabled selected>Heure de début</option>
+                        <option value="" disabled selected>Heure de dÃ©but</option>
                         
                         <option value="09">09 heures</option>
                         <option value="10">10 heures</option>
@@ -177,9 +178,9 @@
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 1, // Creates a dropdown of 15 years to control year
             labelMonthNext: 'Suivant',
-            labelMonthPrev: 'Précédent',
-            monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-            monthsShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+            labelMonthPrev: 'PrÃ©cÃ©dent',
+            monthsFull: ['Janvier', 'FÃ©vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'AoÃ»t', 'Septembre', 'Octobre', 'Novembre', 'DÃ©cembre'],
+            monthsShort: ['Janv.', 'FÃ©vr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'AoÃ»t', 'Sept.', 'Oct.', 'Nov.', 'DÃ©c.'],
             weekdaysFull: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
             weekdaysShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
             weekdaysLetter: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
