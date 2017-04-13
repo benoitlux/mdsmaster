@@ -38,5 +38,27 @@ public class EvenementManager {
 
 	        EvenementDao.ajouterEvenement(nouvelEvenement);
 	    }
+	    
+	    public List<CalendarDTO> listerEvenementsAValider() {
+	        return EvenementDao.listerEvenementsAValider();
+
+	    }
+
+
+	    public void supprimerEvenement(Integer evenement_id) {
+
+
+	        EvenementDao.supprimerEvenement(evenement_id);
+	    }
+
+	    public void validerEvenement(Integer evenement_id) {
+
+
+	        EvenementDao.validerEvenement(evenement_id);
+	    }
+	    
+	    public static CalendarDTO getEvenement(Integer evenement_id) {
+	        return EvenementDao.getEvenement(evenement_id);
+	    }
 
 }

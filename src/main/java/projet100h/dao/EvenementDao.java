@@ -11,6 +11,19 @@ public interface EvenementDao {
     
     /*ajoute l'évenement à la bdd*/
     public void ajouterEvenement(CalendarDTO evenements);
+    
+    /*supprimer l'évenement par son ID*/
+    public void supprimerEvenement(Integer evenement_id);
+
+    /*valide l'évenement par son ID*/
+    public void validerEvenement(Integer evenement_id);
+
+    /*liste les événements à valider*/
+    public List<CalendarDTO> listerEvenementsAValider();
+    
+    /*recupère les evenements par l'id*/
+    public CalendarDTO getEvenement(Integer evenement_id);
+    
 
 	
 }
