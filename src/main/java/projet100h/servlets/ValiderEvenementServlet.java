@@ -38,7 +38,7 @@ public class ValiderEvenementServlet extends HttpServlet {
         EvenementManager.getInstance().validerEvenement(evenement_id);
         request.getSession().removeAttribute("evenement_id");
 
-        System.out.println("SupprimerEvenementServlet : Int ID " + evenement_id);
+        System.out.println("ValiderEvenementServlet : Int ID " + evenement_id);
 
         resp.sendRedirect("evenements");
     }
