@@ -22,25 +22,23 @@ public class ValiderEvenementServlet extends HttpServlet {
      */
 
 
-    public static void Update(HttpServletRequest request, HttpServletResponse response) {
-
-    }
+	
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp)
             throws ServletException, IOException {
 
 
-        String Sevenement_id = request.getParameter("id");
-        System.out.println("ValiderEvenementServlet : String ID " + Sevenement_id);
+       String Sevenement_id = request.getParameter("id");
+       // System.out.println("ValiderEvenementServlet : String ID " + Sevenement_id);
 
         int evenement_id = Integer.parseInt(Sevenement_id);
         EvenementManager.getInstance().validerEvenement(evenement_id);
         request.getSession().removeAttribute("evenement_id");
 
-        System.out.println("ValiderEvenementServlet : Int ID " + evenement_id);
+       // System.out.println("ValiderEvenementServlet : Int ID " + evenement_id);
 
-        resp.sendRedirect("evenements");
+       resp.sendRedirect("evenements");
     }
 
 

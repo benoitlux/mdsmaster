@@ -33,6 +33,11 @@ public class EvenementManager {
 
 	    }
 	    
+	    public List<CalendarDTO> listerTousEvenements() {
+	        return EvenementDao.listerTousEvenements();
+
+	    }
+	    
 	    public void ajouterEvenement(CalendarDTO nouvelEvenement) {
 	        // TODO Auto-generated method stub
 

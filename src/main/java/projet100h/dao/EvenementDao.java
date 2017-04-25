@@ -23,6 +23,9 @@ public interface EvenementDao {
     
     /*recupère les evenements par l'id*/
     public CalendarDTO getEvenement(Integer evenement_id);
+
+    /* Liste les événements validés*/
+    public List<CalendarDTO> listerTousEvenements();
     
 
 	

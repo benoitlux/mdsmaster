@@ -30,13 +30,13 @@ public class SupprimerEvenementServlet extends HttpServlet {
 
 
         String Sevenement_id = request.getParameter("id");
-        System.out.println("SupprimerEvenementServlet : String ID " + Sevenement_id);
+       // System.out.println("SupprimerEvenementServlet : String ID " + Sevenement_id);
 
         int evenement_id = Integer.parseInt(Sevenement_id);
         EvenementManager.getInstance().supprimerEvenement(evenement_id);
         request.getSession().removeAttribute("evenement_id");
 
-        System.out.println("SupprimerEvenementServlet : Int ID " + evenement_id);
+       // System.out.println("SupprimerEvenementServlet : Int ID " + evenement_id);
 
         resp.sendRedirect("calendrier");
     }

@@ -99,6 +99,52 @@ public class EvenementDaoImpl implements EvenementDao{
         }
         return listeEvenements;
     }
+	
+	
+	
+	@Override
+    public List<CalendarDTO> listerTousEvenements() {
+        List<CalendarDTO> listeEvenements = new ArrayList<CalendarDTO>();
+        try {
+            // Créer une nouvelle connexion à la BDD
+            Connection connection = DataSourceProvider.getDataSource().getConnection();
+
+            // Utiliser la connexion
+            Statement stmt = connection.createStatement();
+            ResultSet results = stmt.executeQuery("SELECT * FROM evenements ORDER BY evenement_date_debut");
+            while (results.next()) {
+
+                //Recuperation des paramètres
+            	
+            	
+                listeEvenements.add(new CalendarDTO(
+                		 results.getInt("evenement_id"),
+                         results.getString("evenement_nom"),
+                         results.getString("evenement_date_debut"),
+                         results.getString("evenement_heure_debut"),
+                         results.getString("evenement_description"),
+                         results.getString("evenement_couleur"),
+                         results.getString("duree"),
+                         results.getBoolean("evenement_valide")
+
+                        )
+                );
+            }
+
+            //ferme la connexion
+            stmt.close();
+
+        } catch (
+
+                SQLException e)
+
+        {
+
+            e.printStackTrace();
+        }
+        return listeEvenements;
+    }
+
 
 
     @Override
