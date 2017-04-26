@@ -35,9 +35,10 @@ public class EvenementDaoImpl implements EvenementDao{
                                 results.getString("evenement_date_debut"),
                                 results.getString("evenement_heure_debut"),
                                 results.getString("evenement_description"),
-                                results.getString("evenement_couleur"),
+                                results.getString("evenement_email"),
                                 results.getString("duree"),
-                                results.getBoolean("evenement_valide")
+                                results.getBoolean("evenement_valide"),
+                                results.getString("evenement_telephone")
 
                         )
                 );
@@ -78,9 +79,10 @@ public class EvenementDaoImpl implements EvenementDao{
                          results.getString("evenement_date_debut"),
                          results.getString("evenement_heure_debut"),
                          results.getString("evenement_description"),
-                         results.getString("evenement_couleur"),
+                         results.getString("evenement_email"),
                          results.getString("duree"),
-                         results.getBoolean("evenement_valide")
+                         results.getBoolean("evenement_valide"),
+                         results.getString("evenement_telephone")
 
                         )
                 );
@@ -123,9 +125,10 @@ public class EvenementDaoImpl implements EvenementDao{
                          results.getString("evenement_date_debut"),
                          results.getString("evenement_heure_debut"),
                          results.getString("evenement_description"),
-                         results.getString("evenement_couleur"),
+                         results.getString("evenement_email"),
                          results.getString("duree"),
-                         results.getBoolean("evenement_valide")
+                         results.getBoolean("evenement_valide"),
+                         results.getString("evenement_telephone")
 
                         )
                 );
@@ -194,7 +197,7 @@ public class EvenementDaoImpl implements EvenementDao{
 
 	        try {
 	            Connection connection = DataSourceProvider.getDataSource().getConnection();
-	            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenements(evenement_nom, evenement_date_debut, evenement_heure_debut, evenement_description, evenement_couleur,duree) VALUES(?,?, ?, ?, ?, ?)");
+	            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenements(evenement_nom, evenement_date_debut, evenement_heure_debut, evenement_description, evenement_email,duree, evenement_telephone) VALUES(?,?, ?, ?, ?, ?, ?)");
 
 
 	            //Ajout des paramètres
@@ -205,8 +208,9 @@ public class EvenementDaoImpl implements EvenementDao{
 	      
 	            stmt.setString(4, evenement.getEvenement_description());
 	
-	            stmt.setString(5, evenement.getEvenement_couleur());
+	            stmt.setString(5, evenement.getEvenement_email());
 	            stmt.setString(6, evenement.getDuree());
+	            stmt.setString(7, evenement.getEvenement_telephone());
 	           
 	            stmt.executeUpdate();
 	            stmt.close();
@@ -222,7 +226,7 @@ public class EvenementDaoImpl implements EvenementDao{
 
 	   @Override
 	    public CalendarDTO getEvenement(Integer evenement_id) {
-	        CalendarDTO evenement = new CalendarDTO(null, null, null, null, null, null, null, null);
+	        CalendarDTO evenement = new CalendarDTO(null, null, null, null, null, null, null, null, null);
 	        try {
 	            Connection connection = DataSourceProvider.getDataSource().getConnection();
 	            Statement stmt = connection.createStatement();
@@ -234,9 +238,10 @@ public class EvenementDaoImpl implements EvenementDao{
 	                        results.getString("evenement_date_debut"),
 	                        results.getString("evenement_heure_debut"),
 	                        results.getString("evenement_description"),
-	                        results.getString("evenement_couleur"),
+	                        results.getString("evenement_email"),
 	                        results.getString("duree"),
-	                        results.getBoolean("evenement_valide")
+	                        results.getBoolean("evenement_valide"),
+	                        results.getString("evenement_telephone")
 	                     
 	                       
 
