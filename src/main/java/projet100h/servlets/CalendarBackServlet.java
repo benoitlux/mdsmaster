@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import projet100h.pojos.CalendarDTO;
 import projet100h.services.EvenementManager;
 
-@WebServlet("/calendrierBack")
+@WebServlet("/admin/calendrierBack")
 public class CalendarBackServlet extends HttpServlet{
 
 /**

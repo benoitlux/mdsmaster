@@ -18,7 +18,7 @@ public List<Suggestion> listSuggestions() {
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM suggestion")) {
 		while (resultSet.next()) {
-			Suggestions.add(new Suggestion(resultSet.getInt("idsuggestion"),resultSet.getString("text"),resultSet.getString("titre"),resultSet.getString("soustitre")));
+			Suggestions.add(new Suggestion(resultSet.getInt("idsuggestion"),resultSet.getString("text"),resultSet.getString("titre"),resultSet.getString("soustitre"),resultSet.getString("image")));
 		}
 	} catch (SQLException e) {
 		e.printStackTrace();
@@ -73,9 +73,9 @@ public void ajouterSuggestion(Suggestion Suggestions, String imagePath) {
 
 
 
-public void updateSuggestions(Integer idsuggestion, String text, String titre, String soustitre) {
+public void updateSuggestions(Integer idsuggestion, String text, String titre, String soustitre, String image) {
 	try(Connection connection = DataSourceProvider.getDataSource().getConnection();
-	PreparedStatement statement = connection.prepareStatement("UPDATE suggestion SET text='"+text+"', titre='"+titre+"', soustitre='"+soustitre+"' WHERE idsuggestion="+idsuggestion)){
+	PreparedStatement statement = connection.prepareStatement("UPDATE suggestion SET text='"+text+"', titre='"+titre+"', soustitre='"+soustitre+"', image='"+image+"' WHERE idsuggestion="+idsuggestion)){
 	statement.executeUpdate();
 	} catch (SQLException e) {
 		e.printStackTrace();

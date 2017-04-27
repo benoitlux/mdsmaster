@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import org.thymeleaf.context.WebContext;
 
 import projet100h.services.EvenementManager;
+import projet100h.services.InformationsService;
 import projet100h.pojos.CalendarDTO;
+import projet100h.pojos.Informations;
 
 
 
@@ -32,6 +34,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	List<CalendarDTO> evenements = EvenementManager.getInstance().listerEvenements();
     request.setAttribute("evenements", evenements);
+ 
 
 
 

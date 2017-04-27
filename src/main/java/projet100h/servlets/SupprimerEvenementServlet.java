@@ -12,7 +12,7 @@ import projet100h.services.EvenementManager;
 
 import java.io.IOException;
 
-@WebServlet("/supprimer")
+@WebServlet("/admin/supprimer")
 public class SupprimerEvenementServlet extends HttpServlet {
 
      /*
@@ -38,7 +38,7 @@ public class SupprimerEvenementServlet extends HttpServlet {
 
        // System.out.println("SupprimerEvenementServlet : Int ID " + evenement_id);
 
-        resp.sendRedirect("calendrier");
+        resp.sendRedirect("evenements");
     }
 
 

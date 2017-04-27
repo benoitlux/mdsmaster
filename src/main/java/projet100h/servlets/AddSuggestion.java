@@ -1,6 +1,7 @@
 package projet100h.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -12,8 +13,7 @@ import javax.servlet.http.Part;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
-
-
+import projet100h.pojos.ImageS3;
 import projet100h.pojos.Suggestion;
 
 import projet100h.services.SuggestionService;
@@ -43,14 +43,34 @@ public class AddSuggestion extends AbstractGenericServlet{
 		String soustitre = req.getParameter("titre");
 		String text = req.getParameter("soustitre");
 		
-		Part SuggestionImage = req.getPart("idsuggestion");
-		
-		
-		
-		 Suggestion nouvelSuggestion = new Suggestion(null, titre, soustitre, text);
-		SuggestionService.getInstance().ajouterSuggestion(nouvelSuggestion, SuggestionImage);
+		Part SuggestionImage = req.getPart("image");
+		       
 	        
-	        
+		
+		Suggestion newSuggestion = new Suggestion(
+				null,
+				titre,
+				soustitre,
+				text,
+				null
+				);
+		
+		SuggestionService.getInstance().ajouterSuggestion(newSuggestion, req.getPart("image"));
+				
+		List <Suggestion> listSuggestion = SuggestionService.getInstance().listSuggestions();
+		int taille = listSuggestion.size();	
+		Suggestion lArticle = listSuggestion.get(taille-1);
+				
+		String id = lArticle.getIdsuggestion().toString();
+		System.out.println("id : "+id);
+		String chemin = "https://s3.eu-west-2.amazonaws.com/momentdesoi/suggestion-"+id;
+		ImageS3.uploadImageToAWSS3(SuggestionImage, "suggestion-"+id);
+		
+	//	Suggestion pr = new Suggestion(lArticle.getIdsuggestion(), titre, soustitre, text, chemin);
+		
+		SuggestionService.getInstance().updateSuggestions(lArticle.getIdsuggestion(), titre, soustitre, text, chemin);
+		
+		
 		resp.setCharacterEncoding("UTF8");
 		resp.sendRedirect("AccueilBack");
 	}

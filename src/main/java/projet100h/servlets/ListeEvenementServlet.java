@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/evenements")
+@WebServlet("/admin/evenements")
 public class ListeEvenementServlet extends HttpServlet {
 
     /**

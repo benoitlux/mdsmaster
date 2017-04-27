@@ -1,11 +1,7 @@
 package projet100h.dao;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+
+import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -13,7 +9,7 @@ import javax.mail.internet.MimeMessage;
 public class SendTextMessage {
 
     /**
-     * Méthode permetant l'envoi de mail avec l'adresse weplanhei@gmail.com
+     * Méthode permetant l'envoi de mail avec l'adresse 
      */
 
     public void envoyer_email(String serveurSTMP, String portSTMP,
@@ -21,8 +17,8 @@ public class SendTextMessage {
             throws Exception {
         try {
 
-            final String username = "institutmomentdesoi@gmail.com";
-            final String password = "Momsoi16";
+            final String username = "";
+            final String password = "";
             java.util.Properties props = new java.util.Properties();
             props.put("mail.smtp.host", serveurSTMP);
             props.put("mail.smtp.socketFactory.port", portSTMP);
@@ -31,6 +27,7 @@ public class SendTextMessage {
             props.put("mail.smtp.port", portSTMP);
             props.put("mail.imaps.ssl.trust", "*");
             props.put("mail.smtp.ssl.enable", "true");
+            
             Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(username, password);
@@ -50,7 +47,7 @@ public class SendTextMessage {
             System.err.println("Adresse invalide");
             System.err.println(e);
         } catch (MessagingException e) {
-            System.err.println("Erreur dans le message");
+            System.err.println("Erreur dans le message boloss");
             System.err.println(e);
         }
     }

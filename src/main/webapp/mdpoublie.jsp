@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Cesar
-  Date: 10/05/16
-  Time: 14:29
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -39,7 +31,7 @@
                         <input class="validate" type="email" id="email" name="utilisateur_mail"
                                value="<c:out value="${utilisateur.utilisateur_mail}"/>"
                                size="20" maxlength="60"/>
-                        <label for="email">Adresse email @hei.fr <span class="requis">*</span></label>
+                        <label for="email">Adresse email <span class="requis">*</span></label>
 
                         <span class="erreur">${erreurs['utilisateur_mail']}</span>
                     </div>

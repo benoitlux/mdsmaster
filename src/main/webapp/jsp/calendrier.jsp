@@ -8,6 +8,7 @@
 
 
 <%@ include file="../jsp/header.jsp" %>
+<head><title>Institut de beauté Moment de soi Mons en Pévèle</title></head>
 
 <body>
 

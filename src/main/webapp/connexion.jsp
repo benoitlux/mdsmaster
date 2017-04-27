@@ -62,7 +62,7 @@
     </div>
 
     <div class="row center">
-        <a class="blue-text" href="/mdpoublie">Mot de passe oublié?</a>
+        <a class="blue-text" href="mdpoublie">Mot de passe oublié?</a>
     </div>
 
 </div>

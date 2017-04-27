@@ -11,9 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
+import projet100h.pojos.Categorie;
 import projet100h.pojos.Prestation;
+import projet100h.pojos.SousCategorie;
+import projet100h.services.CategorieService;
 import projet100h.services.InformationsService;
 import projet100h.services.PrestationService;
+import projet100h.services.SousCategorieService;
 
 
 
@@ -32,10 +36,13 @@ public class PrestationBackServlet extends AbstractGenericServlet{
 		List<Prestation> listPrest= PrestationService.getInstance().listPrestation();
 		context.setVariable("prestations", listPrest);
 		
-		
-		
-		
 		context.setVariable("information", InformationsService.getInstance().getInformations(1));
+		
+		List<SousCategorie> listSousCat= SousCategorieService.getInstance().listSousCategorie();
+		context.setVariable("souscat", listSousCat);
+		
+		List<Categorie> listCat= CategorieService.getInstance().listCategorie();
+		context.setVariable("cat", listCat);
 		
 		templateEngine.process("prestation_Back", context, resp.getWriter());
 	}

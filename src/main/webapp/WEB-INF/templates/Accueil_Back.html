@@ -1,8 +1,10 @@
 <html>
 		<head>
+			<title>Institut de beauté Moment de soi Mons en Pévèle</title>
 			
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<meta charset="utf-8">
+			<meta name="robots" content="noindex" />
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<meta charset="utf-8"/>
 			<script src="../bootstrap/jquery/jquery-3.1.1.min.js"></script>
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"></link>
@@ -12,8 +14,6 @@
 			<link rel="stylesheet" href="../css/back.css"></link>
 			<script type="text/javascript" src="../js/script.js"></script>
 			
-		
-			<title>Moment de soi</title>
 		
 		</head>
 
@@ -127,8 +127,7 @@
 		 
 		 <!-- Bouton ajout photo carousel -->
 		 
-		 <a href="AjoutCaroussel" ><img class="btnBackADD" src="../img/boutonADD.png"/></a>
-		 <a href="#" ><img class="btnBackSUP" src="../img/boutonSUP.png"/></a>
+
 	
 	
 	
@@ -162,7 +161,7 @@
 					
 					<div class="imgmin">
 					<figure class="effect-roxy-accueil" >
-					  <img class="img-responsive taille" th:src="'SuggestionImage?idsuggestion='+${suggestion.idsuggestion}"/>
+					  <img class="img-responsive taille" th:src="${suggestion.image}"/>
 					  </figure>
 					</div>
 					<div class="txtmin">

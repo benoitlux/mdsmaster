@@ -23,6 +23,8 @@ public class ModifHorairesServlet extends AbstractGenericServlet{
 		TemplateEngine templateEngine = this.createTemplateEngine(req);
 		
 		WebContext context = new WebContext(req, resp, req.getServletContext());
+				
+		context.setVariable("information", InformationsService.getInstance().getInformations(1));
 		
 		templateEngine.process("ModifHoraires", context, resp.getWriter());
 	}

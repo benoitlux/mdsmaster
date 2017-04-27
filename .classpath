@@ -23,5 +23,17 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/aws-java-sdk-s3-1.11.18.jar"/>
+	<classpathentry kind="lib" path="lib/javax.mail-1.5.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

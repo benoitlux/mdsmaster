@@ -73,5 +73,16 @@ public class SousCategorieDao {
             e.printStackTrace();
         }
     }
+	
+	public void updateSousCat(Integer idsouscategorie, String nom			
+			) {
+		try(Connection connection = DataSourceProvider.getDataSource().getConnection();
+		PreparedStatement statement = connection.prepareStatement("UPDATE souscategorie SET nom='"+nom+"' WHERE idsouscategorie= '"+idsouscategorie+"' ")){
+		statement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+	}
 
 }

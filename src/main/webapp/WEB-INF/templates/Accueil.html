@@ -1,12 +1,12 @@
 <html>
 		<head>
-		
-			<title>Institut de bauté Moment de soi Mons en Pévèle</title>
 			
+			<title>Institut de beauté Moment de soi Mons en Pévèle</title>
 			
+			<meta name="keywords" content="institut, moment, de, soi, mons, en, pévèle, lille, beauté " />
 			<meta name="description" content="L'institut de beauté Moment de soi situé au 547 rue Saint Jean 59246 Mons-en-Pévèle est ouvert du Mardi au samedi. Une large gamme de soins vous y est proposée"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<meta charset="utf-8"/>
 			<script src="bootstrap/jquery/jquery-3.1.1.min.js"></script>
 			<script src="bootstrap/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"></link>
@@ -16,7 +16,8 @@
 			<script type="text/javascript" src="js/script.js"></script>
 			
 		
-		
+			
+			<meta name="google-site-verification" content="9EM6tIv90KZJc-SxlrFPWrv9h7szuqr29ENPLp7Y4Tw" />
 		</head>
 
 	<body>
@@ -151,11 +152,11 @@
 			 <!-- Définir la taille de mes blocs -->
 				<div class="col-page col-xs-12 col-sm-12 col-md-6 col-lg-3" th:each="suggestion :${suggestions}" th:id="${suggestion.idsuggestion}"  >
 				<!-- Met ton ancre dans le lien -->
-				  <a href="PrestationBack"  class="cadre">
+				  <a href="Prestation"  class="cadre">
 					
 					<div class="imgmin">
 					<figure class="effect-roxy-accueil" >
-					  <img class="img-responsive taille" th:src="'SuggestionImage?idsuggestion='+${suggestion.idsuggestion}"/>
+					  <img class="img-responsive taille" th:src="${suggestion.image}"/>
 					  </figure>
 					</div>
 					<div class="txtmin">

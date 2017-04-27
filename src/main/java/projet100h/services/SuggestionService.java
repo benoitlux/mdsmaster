@@ -33,16 +33,25 @@ private projet100h.dao.SuggestionDao SuggestionDao = new projet100h.dao.Suggesti
 		return SuggestionDao.listSuggestions();
 	}
 	
+	protected String getNomDuFichier(Part fichier) { 
+	    String contentDisposition = fichier.getHeader("content-disposition"); 
+	    for (String headerProperty : contentDisposition.split(";")) { 
+	      if (headerProperty.trim().startsWith("filename=")) { 
+	        return headerProperty.substring(headerProperty.indexOf("\"") + 1, headerProperty.lastIndexOf("\"")); 
+	      } 
+	    } 
+	    return null; 
+	  }
 	
 		
-	public void updateSuggestions(Integer idsuggestion, String text, String titre, String soustitre
+	public void updateSuggestions(Integer idsuggestion, String text, String titre, String soustitre, String image
 			) throws IOException {
-		SuggestionDao.updateSuggestions(idsuggestion, text, titre, soustitre);
+		SuggestionDao.updateSuggestions(idsuggestion, text, titre, soustitre, image);
 	}
 	
 	 public void ajouterSuggestion(Suggestion nouvelSuggestion, Part picture) {
 		 
-		 Path picturePath = Paths.get(PICTURE_MAIN_DIRECTORY, picture.getSubmittedFileName());
+		 Path picturePath = Paths.get(PICTURE_MAIN_DIRECTORY, getNomDuFichier(picture) );
 	        
 
 		 SuggestionDao.ajouterSuggestion(nouvelSuggestion, picturePath.toString());

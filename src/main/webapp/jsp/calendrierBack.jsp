@@ -7,45 +7,45 @@
 <html>
 
 
-<%@ include file="../jsp/header.jsp" %>
+<%@ include file="../jsp/headerBack.jsp" %>
 
 <body>
 
 
 <!--Import JQuery-->
-		<script src="bootstrap/jquery/jquery-3.1.1.min.js"></script>
+		<script src="../bootstrap/jquery/jquery-3.1.1.min.js"></script>
 		<!--Import Google Icon Font-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
 		
 		<!--Import moment-->
-		<script src='fullcalendar/lib/moment.min.js'></script>
+		<script src='../fullcalendar/lib/moment.min.js'></script>
 		
 		
 		<!--Import fullcalendar-->
-		<link rel='stylesheet' href='css/fullcalendar.min.css' />
-		<script src='fullcalendar/fullcalendar.min.js'></script>
-		<script type="text/javascript" src="fullcalendar/locale/fr.js"></script>
-		<script src='js/agendajs.js'></script>
-		<script src='js/jquery-ui.min.js'></script>
+		<link rel='stylesheet' href='../css/fullcalendar.min.css' />
+		<script src='../fullcalendar/fullcalendar.min.js'></script>
+		<script type="text/javascript" src="../fullcalendar/locale/fr.js"></script>
+		<script src='../js/agendajs.js'></script>
+		<script src='../js/jquery-ui.min.js'></script>
 		
 
 		<!--Import materialize-->
-		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.css">
-		<script type="text/javascript" src='materialize/js/materialize.js'></script>
+		<link type="text/css" rel="stylesheet" href="../materialize/css/materialize.css">
+		<script type="text/javascript" src='../materialize/js/materialize.js'></script>
 		
 		
 		<!--Import momentdesoi-->
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/navbar.css">
-		<link href="css/prestations.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/footer.css">
-		<script type="text/javascript" src="js/script.js"></script>
-		<link rel='stylesheet' href='css/calendrier.css' />
-		<script src='js/jquery.qtip.js'></script>
-		<link rel='stylesheet' href='css/jquery.qtip.css' />
-		<link rel='stylesheet' href='css/surcouche.css' />
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/navbar.css">
+		<link href="../css/prestations.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/footer.css">
+		<script type="text/javascript" src="../js/script.js"></script>
+		<link rel='stylesheet' href='../css/calendrier.css' />
+		<script src='../js/jquery.qtip.js'></script>
+		<link rel='stylesheet' href='../css/jquery.qtip.css' />
+		<link rel='stylesheet' href='../css/surcouche.css' />
 
 
 <!-- Full Calendar -->
@@ -120,7 +120,7 @@ $(document).ready(function () {
             color:'#31B404',
             </c:when>
             <c:otherwise>
-            color:'#FF0000'
+            color:'#FF0000',
             </c:otherwise>
           </c:choose>
           
@@ -157,6 +157,6 @@ $(document).ready(function () {
 
 </body>
 
-<%@ include file="../jsp/footer.jsp" %>
+<%@ include file="../jsp/footerBack.jsp" %>
 
 </html>

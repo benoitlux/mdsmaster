@@ -6,18 +6,31 @@ public class Suggestion {
 	private String text;
 	private String titre;
 	private String soustitre;
+	private String image;
 	
 	
 	
-		public Suggestion(Integer idsuggestion, String text, String titre, String soustitre) {
+		public Suggestion(Integer idsuggestion, String text, String titre, String soustitre, String image) {
 		super();
 		this.idsuggestion = idsuggestion;
 		this.text = text;
 		this.titre = titre;
 		this.soustitre = soustitre;
+		this.image = image;
 	}
 		
 		
+		public String getImage() {
+			return image;
+		}
+
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
+
+
 	public Integer getIdsuggestion() {
 		return idsuggestion;
 	}

@@ -25,6 +25,8 @@ public class ModifContact extends AbstractGenericServlet{
 		
 		WebContext context = new WebContext(req, resp, req.getServletContext());
 		
+		context.setVariable("information", InformationsService.getInstance().getInformations(1));
+		
 		templateEngine.process("ModifContact", context, resp.getWriter());
 	}
 	

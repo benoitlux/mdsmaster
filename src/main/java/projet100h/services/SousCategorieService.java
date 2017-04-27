@@ -1,4 +1,5 @@
 package projet100h.services;
+import java.io.IOException;
 import java.util.List;
 import projet100h.dao.SousCategorieDao;
 import projet100h.pojos.SousCategorie;
@@ -39,6 +40,11 @@ private SousCategorieDao SousCategorieDao = new SousCategorieDao();
 
 	        SousCategorieDao.supprimerSousCategorie(idsouscategorie);
 	    }
+	 
+	 public void updateSousCat(Integer idsouscategorie, String nom
+				) throws IOException {
+			SousCategorieDao.updateSousCat(idsouscategorie, nom);
+		}
 	
 	
 }
