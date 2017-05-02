@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
-
+import projet100h.dao.SendNewsletter;
 import projet100h.dao.SendTextMessage;
 import projet100h.pojos.Newsletter;
 
@@ -46,33 +46,19 @@ public class NewsletterServlet extends AbstractGenericServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String mail = req.getParameter("mail");
-				
-		
-		Newsletter newMail = new Newsletter(null, mail);
-		NewsletterService.getInstance().ajouterNewsletter(newMail);
-	        
-	        
-				
-		
-		
 		
 		String[] utilisateur_mail = req.getParameterValues("mails");
         System.out.println("recuperation :" + utilisateur_mail);
         
+        String text_newsletter = req.getParameter("text");
+        System.out.println("recuperation du texte :" + text_newsletter);
         
-    /*    try {
-            SendTextMessage envoyeurDeMail = new SendTextMessage();
+        try {
+            SendNewsletter envoyeurDeMail = new SendNewsletter();
 
 
-
-           
-            String message = "Bonjour,\n\n"
-                    + "Vous venez de modifier votre mot de passe .\n"
-                    + "Voici votre nouveau mot de passe :  "
-                    + "Merci de le noter";
             envoyeurDeMail.envoyer_email("smtp.gmail.com", "465", "institutmomentdesoi@gmail.com",
-                    utilisateur_mail, "Newsletter", message);
+                    utilisateur_mail, "Newsletter", text_newsletter);
 
 
         } catch (NoSuchAlgorithmException e) {
@@ -82,7 +68,7 @@ public class NewsletterServlet extends AbstractGenericServlet{
         } catch (Exception e) {
             e.printStackTrace();
         }
-*/
+
 
          /* Redirection vers confirmation inscription ! */
         resp.setCharacterEncoding("UTF8");

@@ -71,7 +71,7 @@
 
 </div>
 
-<%@ include file="../jsp/footerBack.jsp" %>
+
 
 <script src='../js/fullcalendar.js'></script>
 <script type="text/javascript" src="../js/qtip-1.0.0.min.js"></script>

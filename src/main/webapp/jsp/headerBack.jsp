@@ -29,6 +29,7 @@
 						<a class="navbar-brand" href="AccueilBack"> <img class="logo_header" src="../img/icone/iconeMDSblanc.png"> </a>
 						<a class="navbar-brand" href="AccueilBack"> <img class="logo_header2" src="../img/icone/iconeMDS.png"> </a>
 						<a class="navbar-brand" href="../deconnexion">Se deconnecter </a>
+						<a class="navbar-brand" href="modifiermdp">Modifier MDP </a>
 						
 					</div>
 					
@@ -89,7 +90,7 @@
 								</ul>
 						</li>
 						<li><a href="calendrierBack">RENDEZ-VOUS</a></li>
-						<!--<li><a href="carte_cadeau.html">CARTES CADEAUX</a></li>-->
+						<li><a href="newsletter">NEWSLETTER</a></li>
 						
 					</ul>
 				</div>

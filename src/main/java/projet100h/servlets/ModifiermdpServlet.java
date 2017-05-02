@@ -27,7 +27,7 @@ public class ModifiermdpServlet extends HttpServlet {
 	/*
    * Servlet modification du mot de passe
     */
-    public static final String VUE = "/parametre.jsp";
+    public static final String VUE = "/modifmdp.jsp";
     public static final String ATT_FORM = "form";
     public static final String ATT_RESULTAT = "resultat";
 

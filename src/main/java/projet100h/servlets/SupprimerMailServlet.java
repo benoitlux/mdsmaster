@@ -7,19 +7,21 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
 import projet100h.pojos.Newsletter;
-
+import projet100h.pojos.Prestation;
 import projet100h.services.NewsletterService;
+import projet100h.services.PrestationService;
 
 
 
 
 
-@WebServlet("/admin/AddMail")
-public class AddMailServlet extends AbstractGenericServlet{
+@WebServlet("/admin/SupprimerMail")
+public class SupprimerMailServlet extends AbstractGenericServlet{
 
 	private static final long serialVersionUID = -3032812618526895052L;
 
@@ -33,19 +35,25 @@ public class AddMailServlet extends AbstractGenericServlet{
 		context.setVariable("newsletters", listNews);
 		
 		
-		templateEngine.process("AddMail", context, resp.getWriter());
+		
+		
+		
+		
+		templateEngine.process("SupprimerMail", context, resp.getWriter());
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String mail = req.getParameter("mail");
+		
+		Integer IdMail = Integer.parseInt(req.getParameter("IdMail"));
 		
 		
-		Newsletter newMail = new Newsletter(null, mail);
-		NewsletterService.getInstance().ajouterNewsletter(newMail);
-	        
-	        
+		
+				
+		
+		NewsletterService.getInstance().supprimerNewsletter(IdMail);
+		
 		resp.setCharacterEncoding("UTF8");
 		resp.sendRedirect("newsletter");
 	}

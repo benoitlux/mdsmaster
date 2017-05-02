@@ -2,24 +2,24 @@ package projet100h.pojos;
 
 public class Newsletter {
 	
-	private Integer id_mail;
+	private Integer idmail;
 	private String mail;
 	
 	
-	public Newsletter(Integer id_mail, String mail) {
+	public Newsletter(Integer idmail, String mail) {
 		super();
-		this.id_mail = id_mail;
+		this.idmail = idmail;
 		this.mail = mail;
 	}
 
 
-	public Integer getId_mail() {
-		return id_mail;
+	public Integer getIdmail() {
+		return idmail;
 	}
 
 
-	public void setId_mail(Integer id_mail) {
-		this.id_mail = id_mail;
+	public void setId_mail(Integer idmail) {
+		this.idmail = idmail;
 	}
 
 
