@@ -1,6 +1,8 @@
 package projet100h.dao;
 
 
+import java.io.File;
+
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -51,4 +53,6 @@ public class SendTextMessage {
             System.err.println(e);
         }
     }
+    
+
 }
